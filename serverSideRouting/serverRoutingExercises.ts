@@ -71,6 +71,7 @@ async function handler(req: Request) {
 	const url = new URL(req.url);
 	//To serve static files such as images, you need to create a route that handles requests for those files. You can use the URLPattern API to match the URL against a pattern that includes a filename, and then use Deno.open() to open the file and return it in the response.
 	//The Deno.open() function is used to open a file and return a file object. It's part of Deno's standard library and provides functionality similar to Node.js's fs module.
+	//Deno.open() opens a file and resolves to an instance of Deno.FsFile which is Deno constructor used for reading/writing files (liike fs in Node). Generally FsFile should not be constructed directly hence we use Deno.open()
 	const imgPattern = new URLPattern({ pathname: '/:imgName' });
 
 	if (imgPattern.test(url)) {
