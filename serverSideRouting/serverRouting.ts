@@ -1,6 +1,7 @@
 // //Using if/else + (option to use regex)
 // async function handler(req: Request) {
 // 	const url = new URL(req.url);
+// // URL() constructor takes a string and returns a URL object representing the URL defined by the parameters
 // 	console.log(req.url);
 // 	console.log(url);
 
@@ -38,7 +39,7 @@ async function handler(req: Request) {
 	const url = new URL(req.url);
 	//create pattern using URLPattern() constructor
 	const animalPattern = new URLPattern({ pathname: '/:name' });
-	//
+	//create capture group with variable 'name'
 	const meowPattern = new URLPattern({ pathname: '/meow' });
 	const woofPattern = new URLPattern({ pathname: '/woof' });
 
